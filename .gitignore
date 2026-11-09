@@ -1,0 +1,22 @@
+# 本地运行产生的数据（ClawCloud 上会有持久卷）
+data/
+*.log
+
+# 环境变量（绝对不能提交！密钥都在里面）
+.env
+.env.local
+
+# 系统 / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node 缓存
+node_modules/
+npm-debug.log*
+
+# 测试临时文件
+/tmp/

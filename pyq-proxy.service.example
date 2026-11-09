@@ -1,0 +1,21 @@
+[Unit]
+Description=朋友圈 AI 助手自建后端代理
+After=network.target
+
+[Service]
+Type=simple
+User=pyq
+WorkingDirectory=/opt/pyq-proxy
+Environment=NODE_ENV=production
+Environment=PORT=8787
+# 公网部署：PROXY_TOKEN 必须设置
+EnvironmentFile=/opt/pyq-proxy/.env
+ExecStart=/usr/bin/node /opt/pyq-proxy/server.js
+Restart=always
+RestartSec=2
+
+# 给 systemd 健康检查用的 hint，不是强制
+# WatchdogSec=30s
+
+[Install]
+WantedBy=multi-user.target

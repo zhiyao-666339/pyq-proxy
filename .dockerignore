@@ -1,0 +1,4 @@
+# Docker 只需要 server.js，其他全排除，构建更快、镜像更小
+# （GitHub Actions 构建时会带 .github 工作流，但那在构建上下文之外）
+**/*
+!server.js
